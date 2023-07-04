@@ -1,0 +1,1 @@
+You removed Exported Data default printing of header from dataTables.buttons.min

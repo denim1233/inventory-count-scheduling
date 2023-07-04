@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>CIC Monitoring</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+  <link  rel="stylesheet" type="text/css" href="css/select2.css">
+  <link  rel="stylesheet" type="text/css" href="css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/j1.css">
+  <link rel="stylesheet" type="text/css" href="css/j2.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/page.css">
+  <script type="text/javascript" src="javascript/3.3.1_jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/3.3.7_js_bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jszip.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/pdfmake.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/vfs_fonts.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.print.min.js"></script>
+  <script src="javascript/app.js"></script>
+  <script src="javascript/sweetalert.js"></script>
+</head>
+<body>
+  <div class='row-template'>
+    <div id="appnavbar" class = 'top-template'></div>
+    <div id="sidebar" class = 'sidebar-template'></div>
+    <!-- Page Content  -->
+    <div id="content" class = 'content-template'>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home" id='main'>Dashboard</a></li>
+        <li id='liledger'><a data-toggle="tab" href="#menu1" id='ledger'>Ledger</a></li>
+        <li id='licurrent'><a data-toggle="tab" href="#home" id='currentcount'>Current Count</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="panel panel-default">
+            <div class="panel-heading"><b>Search</b></div>
+            <div class="panel-body">
+              <div class="grid-container">
+                <div class="grid-item"><label>Branch</label></div>
+                <div class="grid-item"><select id='cmbbranch' style='width: 150px; text-align: right;'></select></div>
+                <div class="grid-item"><label id = 'lbfrom'>From</label></div>
+                <div class="grid-item"><input type = 'date'  id = 'dt_index_datefrom'></div>
+                <div class="grid-item"><label id = 'lbto'>To:</label></div>  
+                <div class="grid-item"><input type = 'date'  id = 'dt_index_dateto'></div>
+                <div class="grid-item"><label>Group </label></div>
+                <div class="grid-item"> <select id='cmbgroup' style="width: 150px;"></select></div>
+              </div>
+              <div style = "float:right;"> <button id = 'btn_index_search' class="btn btn-primary">Search</button></div>
+            </div>
+          </div>
+          <div class = 'print-container'> 
+            <button id = 'btnprint' type="button"class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-export"></span> Print
+            </button>
+            <button id = 'btnexport' type="button"class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-export"></span> Export
+            </button>
+          </div>
+          <div class="table-container" >
+            <table border = '1' id="tbindex" class="table table-bordered" width = "100%" >
+              <thead>
+                <tr>
+                  <th style = 'display: none;'>Scheduleid</th>
+                  <th>Barcode</th>
+                  <th>Legacy Barcode</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                  <th>Store</th>
+                  <th>Group</th>
+                  <th>Sys on Hand</th>
+                  <th>Sell out</th>
+                  <th>Interbranch (Shipcon)</th>
+                  <th>INT RECVNG</th>
+                  <th>EXT RECVNG</th>
+                  <th>MISC ISSUE</th>
+                  <th>MISC RECEIPT</th>
+                  <th>Selling Area</th>
+                  <th>Whouse Area</th>
+                  <th>Variance</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                  <th style = 'display: none;'>StoreId</th>
+                </tr>
+              </thead>
+              <tbody id='b1'>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div id="menu1" class="tab-pane fade">
+          <div id='table1'>
+            <div style='float:right;'>
+              
+              <form class="form-inline" id = 'exportTable' method="post" action= "php/export_excel.php">
+                <input type = "hidden" name = 'txttableContainer' id = 'txttableContainer'>
+                <button type="submit" class="btn btn-default btn-sm" id = 'btnexportledger'>
+              </form>
+                  <span class="glyphicon glyphicon-export"></span> Export
+              </button>
+            </div>
+              <label id='lbbarcode'> BARCODE</label><br>
+              <label id='lbdescription'> DESCRIPTION</label><br>
+              <table style= 'background-color: white;' id="tbledger" class='table ' border='1'>
+                <thead head class="thead-dark">
+                  <tr>
+                    <th>Date</th>
+                    <th>Sys on Hand</th>
+                    <th>Sell out</th>
+                    <th>Interbranch<br>(Shipcon)</th>
+                    <th>INT<br>RECVNG</th>
+                    <th>EXT<br>RECVNG</th>
+                    <th>MISC<br>ISSUE</th>
+                    <th>MISC<br>RECEIPT</th>
+                    <th>Selling Area</th>
+                    <th>Whouse Area</th>
+                    <th>Variance</th>
+                    <th width = '300px'>Remarks</th>
+                  </tr>
+                </thead>
+                <tbody id='ledgerbody'>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>
+
+<div id="modalcontainer1"></div>
+<div id="modalcontainer2"></div>
+<div id="modalcontainer3"></div>
+<div id="loader"></div>
+<script src="javascript/select2.js"></script>
+<script src="javascript/select2.min.js"></script>
+
+<style>
+tr{ height: 50px;}
+
+
+</style>

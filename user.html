@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>CIC Monitoring</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+  <link  rel="stylesheet" type="text/css" href="css/select2.css">
+  <link  rel="stylesheet" type="text/css" href="css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/j1.css">
+  <link rel="stylesheet" type="text/css" href="css/j2.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/page.css">
+  <script type="text/javascript" src="javascript/3.4.1_jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/3.3.7_js_bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.checkboxes.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.select.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jszip.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/pdfmake.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/vfs_fonts.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.html5.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="javascript/datatable/buttons.print.min.js"></script>
+  <script src="javascript/app.js?v=3"></script>
+  <script src="javascript/sweetalert.js"></script>
+</head>
+
+<body>
+  <div class='row-template'>
+    <div id="appnavbar" class = 'top-template'></div>
+    <div id="sidebar" class = 'sidebar-template'></div>
+    <!-- Page Content  -->
+    <div id="content" class = 'content-template'>
+      <ul class="nav nav-tabs">
+        <li class="active"><a id='lnkitemset' data-toggle="tab" href="#set">Set User</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="set" class="tab-pane fade in active">
+          <div class="panel panel-default">
+            <div class="panel-heading"><b>Search</b></div>
+            <div class="panel-body">
+              
+              <div class="grid-container">
+                <div class="grid-item"><label>Filter by Branch</label></div>
+                <div class="grid-item"><select style='width: 200px;' id='cmbbranch' style='width: 50px; text-align: right;'></select></div>
+                <div class="grid-item"><label>Department</label></div>
+                <div class="grid-item"><select style='width: 200px;' id='cmbdepartment' style='width: 50px; text-align: right;'></select></div>
+              </div>
+              <div style ="float:right"><button id ='btnsearchindex' class = 'btn btn-primary'>Search</button></div>
+            </div>
+          </div>
+          <div class="table-container" style='height:66vh;'>
+            <table id="tbuser" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Employee Number</th>
+                  <th>Full Name</th>
+                  <th>Position</th>
+                  <th>Assigned Store</th>
+                  <th>Division</th>
+                  <th>Action</th>
+                  <th style = 'display: none;'>STOREID</th>
+                  <th style = 'display: none;'>Department</th>
+                  <th style = 'display: none;'>JOB_CODE</th>
+                  <th style = 'display: none;'>USERDIVISIONID</th>
+                </tr>
+              </thead>
+              <tbody id='b1'>
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Product</h4>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td height='60px' width='100px'><label>Bardcode</label></td>
+              <td height='60px' width='200px'><label id='lbbarcode'>1090100024807</label> </td>
+              <td height='60px' width='50px'><label>Group</label></td>
+              <td height='60px' width='200px'>
+                <select id='cmbgroup'>
+                  <option value='1'>Group A</option>
+                  <option value='2'>Group B</option>
+                  <option value='3'>Group C</option>
+                  <option value='4'>Group D</option>
+                </select>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label>Description: </label>
+              </td>
+              <td>
+                
+                <label id='lbdescription'>WROUGHT IRON HAUSMANN/BROTHER TWISTED 154094/61188 8X8
+                  BLK</label>
+                  
+                </td>
+                <td width='50px'>
+                  <label>Date: </label>
+                </td>
+                <td>
+                  <input type="date" id="txtdate">
+                  <input type="text" id="txtbatch">
+                  <input type="text" id="txtproductid">
+                  
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id='btncreateschedule'>Save</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>
+
+<div id="modalcontainer1"></div>
+<div id="modalcontainer2"></div>
+<div id="UserModal" class="modal fade" role="dialog">
+  <div class="modal-dialog ">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">User Details</h4> 
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label >Branch/Department</label>
+          <input class="form-control" id="txtassignment" disabled>
+        </div>
+        <div class="form-group">
+          <label >Fullname</label>
+          <input class="form-control" id="txtfullname" disabled>
+          <input type='hidden' id="txtempid" value='0'>
+          <input type='hidden' id="txtuserdivisionid" value='0' >
+        </div>
+        <div class="form-group">
+          <label >Role</label>
+          <input type="text" class="form-control" id="txtrole" disabled>
+        </div>
+        <div class="form-group">
+          <label>Division</label>
+          <select class="form-control" id='cmbdivision' style='width: 100%;' multiple="multiple"></select>
+        </div>
+        <div class="form-group">
+          <label >Username</label>
+          <input type="text" class="form-control" id="txtusername">
+        </div>
+        <div class="form-group">
+          <label >Password</label>
+          <input type="password" class="form-control" id="txtpassword">
+        </div>
+
+        <div class="form-group">
+          <input class="form-check-input" type="checkbox" value="" id="cbstatus">
+          <label class="form-check-label" for="flexCheckDefault">
+            Active
+          </label>
+        </div>
+
+
+
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-ModalName="group" id='btnusersave'>Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="loader"></div>
+
+<script src="javascript/select2.js"></script>
+<script src="javascript/select2.min.js"></script>

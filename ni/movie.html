@@ -1,0 +1,124 @@
+ <html>
+    <title> ApitAd </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/j1.css">
+    <link rel="stylesheet" type="text/css" href="css/j2.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <script type= "text/javascript" src="javascript/3.3.1_jquery.min.js"></script>
+    <script type= "text/javascript" src="javascript/3.3.7_js_bootstrap.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/jquery.dataTables.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/dataTables.buttons.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/buttons.aflash.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/jszip.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/pdfmake.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/vfs_fonts.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/buttons.html5.min.js"></script>
+    <script type= "text/javascript" src="javascript/datatable/buttons.print.min.js"></script>
+   
+    <script src="javascript/al.js"></script>
+    <script src="javascript/movie.js"></script>
+    <body>
+        <div width = "100%" id = "topnav"> </div>
+        <div id = "tablecontainer">
+            <div align = 'right' style = 'padding-bottom:10px;'>
+                <button type="button" class="btn btn-secondary" id = "btnadd">Add</button>
+            </div>
+            <table id = "tbmovie" class="table table-bordered">
+                <thead>
+                    <tr>
+                     <th style="display: none;">Id</th>
+                     <th>Movie</th>
+                     <th>Description</th>
+                     <th style="display: none;">Picture</th>
+                     <th>Category</th>
+                     <th style="display: none;">CategoryId</th>
+                     <th style="display: none;">Feature</th>
+                     <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id = 'b1'>
+                </tbody>
+            </table>
+        </div>
+            <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Movie</h4>
+              </div>
+            <div width = "100%">
+                <div style = "width: 50%; float:left;  padding-left: 10px;">
+                    <br>
+                    Name: <input type="text" class="form-control" id="txtmovie"> <br>
+                    Category: <select class="form-control" id="cmbcategory"></select><br>
+                    Description: <textarea style = "resize: none;" class="form-control" rows="7" id="txtdescription"></textarea><br>
+                    <label><input type="checkbox" id = "cbfeature" value="1">Feature</label>
+                </div>
+                <div style = "float:right; width: 50%; padding-left: 10px;">
+                    <br>
+                    <img id="pbmovie" src="" width = 200px height = 300px style="background-color:white;"/><br>
+                    <input type='file' id ="btnbrowse" />
+                    <input type="text" class="form-control" id="txtpicture">
+                </div>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id ='btnsave'>Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+                <!-- Modal -->
+        <div id="genremodal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><label id = 'lbmovie'>Movie</label></h4>
+              </div>
+            <div height = "100%" width = "100%">
+                <div width = "100%" height = "80%" >
+                     <table width = "80%">
+                         <tr height = '100'>
+                             <td align = 'center' width = "20%">
+                                 Genre: 
+                             </td>
+                             <td width = "60%">
+                                 <select class="form-control" id="cmbmoviegenre"></select>
+                             </td>
+                         </tr>
+                     </table>
+                </div>
+               <div width = "100%" style = "height:auto; min-height: 300;" >
+                     <table id = "tbmoviegenre" class="table table-bordered">
+                        <thead>
+                            <tr>
+                             <th style="display: none;">Id</th>
+                             <th>Genre</th>
+                             <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id = 'tb_moviegenre_body'>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id ='btnsavegenre'>Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class = 'footer' id = 'footer'></div>
+    </body>
+  </html>

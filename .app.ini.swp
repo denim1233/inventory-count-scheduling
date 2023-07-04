@@ -1,0 +1,2000 @@
+mysql -u repo -p
+clear
+ls
+cd /opt/
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+cd ctitemcatalog/
+ls
+cd img/
+ls
+cd p/
+ls
+ls -lah
+cd 1/
+ls
+cd 2/
+ls
+cd ..
+ls
+ls -lah
+unzip RBXFORSVN07092021.zip 
+clear
+ls
+cp ProdLib.zip /var/www/repo/
+cd /var/www/repo/
+ls
+mkdir prodlib
+mv ProdLib.zip prodlib/
+cd prodlib/
+ls
+unzip ProdLib.zip 
+ls
+cd ..
+ls
+mv prodlib/ prodlibx/
+cd prodlibx/
+ls
+mv ProdLib ../
+ls
+cd ..
+ls
+ls -lah
+chown -R www-data:www-data ProdLib/
+sudo chown -R www-data:www-data ProdLib/
+ls
+cd ProdLib/
+ls
+ls -lah
+cd public/
+l
+ls
+clear
+ls
+clear
+ls
+cd ..
+ls
+cd database/
+ls
+cd ..
+ls
+cd node_modules/
+ls
+cd ..
+clear
+cd ..
+ls
+cd ProdLib/
+ls
+cd app/
+ls
+cd ..
+ls
+nano server.php 
+clear
+ls
+cd resources/
+ls
+cd ..
+ls
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+cd app/
+ls
+cd ..
+nano .env
+sudo nano .env
+mysql -u repo -p
+cd 
+ls
+clear
+ls
+mysaql -u repo -p
+mysql -u repo -p
+clear
+ls
+cd /var/www/repo/
+ls
+cd prodlibx/
+ls
+c ..
+cd ProdLib
+cd ..
+ls
+cd ProdLib/
+ls
+php -version
+ls
+nano composer.json 
+clear
+sudo apt update
+sudo apt install php-cli unzip
+cd ~
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH=`curl -sS https://composer.github.io/installer.sig`
+echo $HASH
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
+clear
+composer -v
+composer version
+composer -vV
+composer -V
+clera
+clear
+cd /var/www/repo/
+ls
+git clone https://github.com/laravel/laravel.git
+mysq -u repo -p
+mysql -u repo -p
+clera
+clear
+ls
+cd laravel/
+ls
+nano .env.example 
+mv .env.example .env
+nano .env 
+cd ..
+ls
+chown -R www-data.www-data ProdLib/
+sudo chown -R www-data.www-data ProdLib/
+sudo chmod 755 ProdLib/
+sudo chmod -R 755 ProdLib/
+sudo chmod -R 777 ProdLib/storage
+ls
+clear
+ls
+cd ProdLib/
+ls
+composer -V
+ls
+composer update
+sudo composer update
+ls
+nano composer.json 
+sudo nano composer.json 
+composer update
+clear
+sudo composer update
+cd ..
+ls
+cd ProdLib/
+ls
+ls -akh
+ls -lah
+cd ..
+ls
+d ctitemcatalog/
+ls
+cd ctitemcatalog/
+ls
+ls -lah
+cd ..
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+ls -lah
+cd public/
+ls
+nano index.php 
+ls
+clear
+cd ..
+ls
+php artisan serve
+php artisan serve --host=192.168.4.57
+clear
+ls
+php artisan serve --host=192.168.4.57 &
+clear
+ls
+clear
+ls
+cd config/
+ls
+cd ..
+l
+cd routes/
+ls
+cd ..
+clear
+ls
+cd resources/
+ls
+cd js
+ls
+nano app.js 
+cd controllers/
+ls
+nano product_controller.js 
+sudo nano product_controller.js 
+sudo apt update
+sudo apt install nodejs
+sudo apt install npm
+ls
+cd ..
+ls
+cd ..
+cd 
+ls
+cd /var/www/repo/ProdLib/
+ls
+clar
+clear
+ls
+ls -laah
+npm run watch
+sudo npm run watch
+cler
+clear
+ps -ef | grep java
+ls
+history
+sudo npm run watch
+clear
+ls
+nano app/
+sudo bash
+ls
+clear
+ls
+clear
+ls
+cd resources/
+ls
+cd js/
+ls
+find | grep Prod
+find | grep *Prod*
+ls
+sudo nano app.js 
+ls
+nano select2.js 
+less select2.js 
+ls
+clear
+ls
+cd views/
+ls
+cd ..
+ls
+cd controllers/
+ls
+naano product_controller.js 
+clear
+ls
+cd ..
+ls
+cd views/
+ls
+nano product_vw.js 
+sudo nano product_vw.js 
+nano global.js 
+s
+ls
+sudo base32 
+ls
+nano base.js
+nanocclear
+clear
+ls
+sudo nano register_vw.js 
+sudo nano reports_vw.js 
+clear
+cd ..
+cd ProdLib/
+clear
+history
+clear
+sudo npm run watch
+clear
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+cd public/
+ls
+cd images/
+ls
+cd ..
+cd storage/
+ls
+cd app/
+ls
+cd ..
+cd public/
+ls
+cd storage/
+ls
+cd product_images/
+ls
+ls -lah
+cd ..
+ls
+cd resources/
+ls
+cd js
+ls
+cd views
+ls
+nano product_vw.js 
+sudo nano product_vw.js 
+cd ..
+history
+sudo npm run watch
+clear
+ls
+cd ..
+ls
+cd ProdLib/
+ls
+cd resources/
+ls
+cd views/
+ls
+cd ..
+ls
+cd js/
+ls
+cd views
+ls
+nano product_vw.js 
+cd ..
+ls
+cd controllers/
+ls
+nano product_controller.js 
+sudo nano product_controller.js 
+ls
+nano report_controller.js 
+sudo nano report_controller.js 
+ls
+cd ..
+ls
+nano app.js 
+clear
+mysql -u repo -p
+clear
+mysql -V
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+clear
+mysql -u root -p
+mysql -u repo -p
+sudo bash
+clear
+l
+cd /var/www/
+sl
+ls
+cd repo/
+s
+ls
+cd ProdLib/
+ls
+ls -lah
+cd storage/
+ls
+cd framework/
+ls
+ls  -lah
+cd ..
+ls
+chmod -R 0777 storage/
+sudo chmod -R 0777 storage/
+ls
+cd public/
+ls
+nano web.config 
+clear
+cd ..
+ls
+cd config/
+ls
+cd ..
+ls
+cd resources/
+ls
+cd views/
+ls
+cd pages/
+ls
+cd ..
+cd js
+ls
+cd views
+ls
+nano product_vw.js 
+history
+cd ..
+php artisan serve --host=192.168.4.57 &
+clear
+cd /var/www/
+ls
+cd repo/
+clear
+ls
+cd ProdLib/
+history
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+mysql -u root
+mysql -u root -root
+mysql -u root -p
+mysql -u root
+sudo bash
+clear
+cd /var/www/
+ls
+cd repo/
+ls
+cd ctitemcatalog/
+ls
+cd admin362g0xxlz/
+ls
+mysql -u
+mysql
+use
+use 
+su
+clear
+su 
+clear
+cd 
+cd lsb_release -a
+ls
+clear
+cd /var/
+cd /opt/
+ls
+cd keycloak-14.0.0/
+ls
+cd bin
+history
+ls
+./standalone.sh &
+ls
+historyt
+history
+clear
+ls
+./standalone.sh 
+clear
+sudo bash
+su
+mysql -u root
+mysql -u
+su
+ping google.com
+cd /var/www/repo/
+ls
+ping google.com
+clear
+clear
+cd /opt/
+ls
+cd /opt/
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+cd ..
+ls
+clear
+ls
+tar cfvz ProdLib.tar.gz ProdLib/
+ls
+pwd
+clear
+pwd
+ls -l
+ping google.com
+clear
+ls
+sudo mkdir /usr/lib/oracle
+sudo mkdir /usr/lib/oracle/21.1
+sudo mkdir /usr/lib/oracle/21.1/client64
+cd /usr/lib/oracle/21.1/client64
+wget instantclient-basic-linux.x64-21.1.0.0.0.zip
+wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+sudo https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+sudo wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+sudo wget https://download.oracle.com/otn_software/linux/instantclient/211000/instantclient-sdk-linux.x64-21.1.0.0.0.zip
+cd /usr/lib/oracle/21.1/client64
+sudo ln -s libclntsh.so.21.1 libclntsh.so
+sudo ln -s libocci.so.21.1 libocci.so
+sudo echo /usr/lib/oracle/21.1/client64/lib > /etc/ld.so.conf.d/oracle.conf
+sudo nano /etc/ld.so.conf.d/oracle.conf
+nano /usr/lib/oracle/21.1/client64/lib
+sudo nano /etc/ld.so.conf.d/oracle.conf
+cd  /etc/ld.so.conf.d/
+ls
+ls -lah
+sudo nano /etc/ld.so.conf.d/oracle.conf
+ldconfig
+sudo ldconfig
+sudo apt-get install php-dev php-pear build-essential libaio1
+sudo pecl channel-update pecl.php.net
+sudo pecl install oci8-2.2.0
+nano /etc/php/7.4/cli/php.ini
+sudo echo "extension=oci8.so" >> /etc/php/7.4/cli/php.ini
+nano /etc/php/7.4/cli/php.ini
+sudo nano /etc/php/7.4/cli/php.ini
+sudo systemctl restart apache2
+cd /etc/php/7.4/mods-available/
+sudo nano oci.ini
+cd /etc/php/7.4/apache2/conf.d
+sudo ln -s /etc/php/7.4/mods-available/oci.ini 20-oci.ini
+sudo systemctl restart apache2
+php -i | grep oci
+cd /var/www/repo/
+ls
+s -lah
+ls -lah
+nano phpinfo.php
+cd /var/
+os
+cd /var/
+ls
+cd www/
+ls
+cd repo
+ls
+cd isardw/
+ls
+ls -lah
+cd ..
+l
+cd /
+ls
+/etc/apache2/
+ls
+cd /etc/apache2/
+ls
+cd sites-available/
+ls
+nano repo.conf 
+sudo nano repo.conf 
+sudo systemctl restart apache2
+su
+clear
+sudo pecl install sqlsrv
+sudo su
+clear
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+sudocurl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+sudo curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+su
+clear
+sudo apt update
+sudo ACCEPT_EULA=Y apt -y install msodbcsql17 mssql-tools
+sudo apt -y install unixodbc-dev
+sudo apt -y install gcc g++ make autoconf libc-dev pkg-config
+sudo pecl install sqlsrv
+sudo service php7.4-fpm restart
+sudo service php7.4.-fpm restart
+sudo service php7.2.-fpm restart
+sudo service php7.4.2.-fpm restart
+sudo /etc/init.d/php-fpm restart
+sudo su
+su
+sudo bash
+cd /var/
+ls
+cd www/
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+cd app/
+ls
+nano Product.php 
+cd ..
+ls
+cd app/
+ls
+cd Http/
+ls
+cd CO
+ls
+cd Controllers/
+ls
+nano ProductController.php 
+ls
+cd /var/www/
+ls
+cd html/
+ls
+cd ..
+cd re
+cd repo/
+ls
+python
+clear
+cd /
+ls
+cd imag
+exit
+php -version
+php -m
+cd /etc/php/7.4/
+ls
+sl
+ks
+=ls
+ls
+cd mods-available/
+ls
+.s
+ls
+cd 
+ls
+cd /opt/
+ls
+cdcd ~/
+ls
+cd ~
+ls
+cd ..
+ls
+cd admin2/
+ls
+cd /opt/
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+clear
+ps -ef | grep java
+php -version
+cd /opt/
+s
+ls
+cd svn
+ls
+cd ..
+ls
+cd 
+ls
+cd /
+ls
+cd ..
+ls
+cd /
+ls
+cd ~
+ls
+rm RBXFORSVN07092021.zip 
+ls
+rm -rf __MACOSX/
+clear
+ls
+cd /
+ls
+cd /root/
+l
+cd /
+ls
+cd /usr/lib/php/
+ls
+cd 7.4/
+ls
+cd ..
+cd 20190902/
+ls
+cd ~
+ls
+mkdir oracle
+cd oracle/
+wget https://www-oracle-com.translate.goog/database/technologies/instant-client/linux-x86-64-downloads.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=fil&_x_tr_pto=ajax,se,elem
+wget https://translate.google.com/website?sl=auto&tl=en&ajax=1&se=1&elem=1&u=https://download.oracle.com/otn_software/linux/instantclient/213000/instantclient-basic-linux.x64-21.3.0.0.0.zip
+wget https://download.oracle.com/otn_software/linux/instantclient/213000/instantclient-basic-linux.x64-21.3.0.0.0.zip
+unzip instantclient-basic-linux.x64-21.3.0.0.0.zip 
+cd instantclient_21_3/
+ls
+phpsize
+mak
+make
+sudo make install
+ks
+ls
+nano /etc/php/7.4/mods-available/20-oci.ini
+sudo nano /etc/php/7.4/mods-available/20-oci.ini
+ls
+cd /etc/php/7.4/
+ls
+cd mods-available/
+ls
+nano oci.ini 
+sudo rm 20-oci.ini 
+nan oci.ini 
+php -m
+ls
+cd ..
+ls
+cd cli/
+ls
+cd conf.d/
+s
+ls
+cd ..
+ls
+cd ..
+ls
+cd mods-available/
+sudo nano pdo-oci.ini
+sudo ln -s /etc/php/7.4/mods-available/pdo-oci.ini /etc/php/7.4/cli/conf.d/20-pdo-oci.ini
+php -m
+ls
+cd ..
+ls
+cd ..
+ls
+cd 8.0
+ls
+cd mods-available/
+ls
+cd ..
+ls
+cd 7.4/
+ls
+cd /usr/lib/php/20190902/
+ls
+cd /home/admin2/
+ls
+cd oracle/
+ls
+cd instantclient_21_3/
+ls
+cd ..
+wget https://download.oracle.com/otn_software/linux/instantclient/213000/instantclient-sdk-linux.x64-21.3.0.0.0.zip
+unzip instantclient-sdk-linux.x64-21.3.0.0.0.zip 
+ls
+unzip instantclient-sdk-linux.x64-21.3.0.0.0.zip 
+mkdir ins
+cd ins
+mv ../instantclient-sdk-linux.x64-21.3.0.0.0.zip .
+l
+unzip instantclient-sdk-linux.x64-21.3.0.0.0.zip 
+ls
+cd instantclient_21_3/
+ls
+cd sdk/
+ls
+cd ..de
+ls
+cd demo/
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd instantclient_21_3/
+ls
+cd sdk/
+ls
+cd ..
+ls
+cd ..
+ls
+cd oracle/
+ls
+clear
+cd ..
+ls
+mkdir installer
+wget https://gist.github.com/ebta/8d1e08b1c01b5e58052a4a1d032202aa#file-pdo_oci-sh
+ls
+cd i n
+cd installer/
+ls
+wget https://gist.github.com/ebta/8d1e08b1c01b5e58052a4a1d032202aa#file-pdo_oci-sh
+ls
+mv 8d1e08b1c01b5e58052a4a1d032202aa pdo_oci.sh
+ls
+chmod 775 pdo_oci.sh 
+ls
+nano pdo_oci.sh 
+wget https://gist.githubusercontent.com/ebta/8d1e08b1c01b5e58052a4a1d032202aa/raw/946b39d105b7337235a756406bb08feb212688e3/pdo_oci.sh
+ls
+rm *
+wget https://gist.githubusercontent.com/ebta/8d1e08b1c01b5e58052a4a1d032202aa/raw/946b39d105b7337235a756406bb08feb212688e3/pdo_oci.sh
+ls
+chmod 755 pdo_oci.sh 
+ls
+nano pdo_oci.sh 
+ls
+cd ..
+ls
+cd oracle/
+l
+mv instantclient_21_3/ ../installer/
+cd ..
+ls
+cd installer/
+ls
+clear
+ls
+nano pdo_oci.sh 
+cd instantclient_21_3/
+pwd
+cd ..
+ls
+nano pdo_oci.sh 
+ls
+sudo mv instantclient_21_3 /opt/instantclient
+cd /opt/instantclient/
+ls
+cd ~
+ls
+cd installer/
+ls
+nano pdo_oci.sh 
+./pdo_oci.sh 
+ls
+cd php-7.4.22/
+ls
+cd ext/
+ls
+cd pdo_oci/
+ls
+cd ..
+cd ..ls
+cd ..
+l
+cd ..
+ls
+less pdo_oci.sh 
+clear
+cd /php-7.4.22/ext/pdo_oci
+ls
+cd php-7.4.22/ext/pdo_oci/
+phpize
+./configure --with-pdo-oci=instantclient,/opt/oracle/instantclient,21.3  
+make && make install 
+mysql -u root -p
+mysql -u repo -p
+ls
+cd /
+cd ..
+ls
+cd / var/www/
+ls
+dc /etc/
+ls
+cd /var/repo
+ls
+cd /var/www/repo
+ls
+cd mantis/
+ls
+cd co
+cd config
+ls
+nano config_inc.php
+mysql -u repo
+mysql -u repo -p
+mysql -verion
+mysql -version
+mysql -v
+mysql --v
+mysql --version
+mysql -u repo -p
+sudo
+su
+sudo bash
+su
+clear
+cd /home/
+ls
+cd admin2/
+cd installer/
+ls
+clear
+lks
+ls
+cd php-7.4.22/
+ls
+clear
+cd ext/
+cd pdo_oci
+ls
+clear
+phpsize
+su
+su 
+clear
+su
+ps -ef | grep mysql
+mysql
+su
+mysql
+su
+cd /etc/mysql/
+ls
+nano my.cnf
+sudo nano my.cnf
+history
+sudo /etc/init.d/mysql restart
+ls
+cd ..
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+cd ProdLib/
+ls
+cd database/
+ls
+cd ..
+cd config/
+l
+nano datatables.php 
+cd ..
+ls
+cd app/
+ls
+cd ..
+ls
+cd cd database/
+ls
+cd database/
+ls
+cd migrations/
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+l
+cd ProdLib/
+ls
+cd database/
+ls
+ccd ..
+cd co
+ls
+cd ..
+cd config/
+ls
+nano datatables.php 
+ls
+mysql -u root -p
+mysql -u repo -p
+su
+clear
+ifconfig
+ls
+cd /opt/jb
+cd /opt
+l
+php7.4 
+php7.4 -v
+php7.4 -m
+phpenmod pdo_oci
+php7.4 phpenmod pdo_oci
+php7.4 -v phpenmod pdo_oci
+phpenmod -v 7.4 pdo_oci
+php7.4 -m
+echo ORACLE_HOME
+ldconfig
+export ORACLE_HOME=/usr/lib/oracle/21.1/client64
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+sudo ldconfig
+echo ORACLE_HOME
+echo $ORACLE_HOME
+phpenmocd ~/
+l
+cd ~
+ls
+cd installer/
+ls
+cd php-7.4.22/
+ls
+php7.4 -v
+ls
+cd ..
+ls
+less pdo_oci.sh 
+wget https://www.php.net/distributions/php-7.4.23.tar.gz
+ls
+tar xfvz php-7.4.23.tar.gz 
+ls
+cd php-7.4.23
+ls
+cd ext/
+l
+cd pdo_o
+cd pdo_oci/
+,ls
+ls
+./
+wget https://www.php.net/distributions/php-7.4.22.tar.gz
+ls
+history
+ls
+clear
+./configure --with-pdo-oci=instantclient,//usr/lib/oracle/21.1/client64,21.1 
+ls
+./configure --with-pdo-oci=instantclient,/usr/lib/oracle/21.1/client64,21.1
+ls
+less ../../../pdo_oci.sh 
+cd ..
+./configure --with-pdo-oci=instantclient,/opt/oracle/instantclient,21.3
+ls
+cd php-7.4.23/
+ls
+./configure --with-pdo-oci=instantclient,/opt/oracle/instantclient,21.3
+history
+./configure --with-pdo-oci=instantclient,/usr/lib/oracle/21.1/client64,21.1
+make && make install
+ls
+cd ext/
+ls
+cd pdo_oci/
+ls
+make && make install
+cd ..
+make install
+d ..
+make install
+cd ..
+make install
+make
+./configure 
+sudo bash
+clear
+history
+sudo
+su
+cd var/www/repo/cicmonitoring_v2/php/GroupController.php
+less var/www/repo/cicmonitoring_v2/php/GroupController.php
+lsess /var/www/repo/cicmonitoring_v2/php/GroupController.php
+less /var/www/repo/cicmonitoring_v2/php/GroupController.php
+cd /opt/
+ls
+clear
+cd /home/
+ls
+cd admin2
+ls
+php -m
+php -version
+su
+cd /var/lib/svn/
+ls
+chcon -R -t httpd_sys_content_t  /var/lib/svn/redbox
+clear
+less /etc/apache2/mods-available/dav_svn.conf 
+less/etc/apache2/dav_svn.passwd
+less /etc/apache2/dav_svn.passwd
+clear
+ls
+cd /etc/apache2/mods-enabled/
+ls
+less dav_svn.conf 
+cd /var/lib/svn/
+ls
+ls -0lah
+ls l-ah
+ls -lah
+cd ecomm
+ls
+ls -lah
+cd ..
+ls
+clear
+ls
+ls -lah
+chown -R www-data:www-data redbox
+sudo chown -R www-data:www-data redbox
+ls -lah
+php -m
+php
+su
+nano /etc/crontab
+sudo nano /etc/crontab
+crontab -e
+sudo nano /etc/crontab
+crontab -;l
+crontab -l
+sh
+crontab -e
+crontab -l
+clear
+crontab -l
+clear
+ls
+cd 
+ls
+ls -lah
+pwd
+crontab -e
+crontab -l
+exit
+ifconfig
+date
+cd /var/
+cd 
+cd /
+s
+ls
+cd media
+ls
+cd ..
+cd mnt
+ls
+cd ..
+ls
+cd /opt
+ls
+c ..
+exit
+ls
+cd /etc/log
+ls
+cd /etc/logs
+cd /var/log
+l
+cd /var/log/cron
+cd /var/log/systemctl status cron 
+systemctl status cron 
+cd /var/log/syslog
+ls
+cd /var/log/ps aux | grep cron.
+ps aux | grep cron.
+service cron restart
+crontab -l
+cd /var/log/cron.lo
+cd /var/log/cron.log
+nanoe /etc/rsyslog.d/50-default.con
+nano /etc/rsyslog.d/50-default.conf
+sudo nano /etc/rsyslog.d/50-default.conf
+sudo service rsyslog restart
+service cron restart
+less /var/log/cron.log 
+clear
+ls
+less cron.log 
+crontab -l
+less /var/www/repo/cicmonitoring_v2/update_data_oracle.sh
+php -v
+cd /var/www/repo/cicmonitoring_v2/
+ls
+ls -lah
+chmod 775 *.sh
+ls
+ls -lah
+cd /var/lo
+lcd /var/
+cd /var/logs
+ls
+cd /var/log/
+less cron.log 
+ls
+less cron.log 
+crontab -e
+crontab -el
+crontab -l
+crontab -u
+crontab -u admi2n
+crontab -u admi2
+crontab -u admin2
+crontab -l
+less cron.log 
+clear
+crontab -l
+crontab -e
+crontab -l
+less cron.log 
+su
+df -h
+du
+df -h
+date
+su 
+su
+cd /var/www/repo/cicmonitoring_v2/
+ls -lah
+cd ..
+ls
+ls -ah
+ls -;ah
+ls -lah
+cd repo/
+ls
+cd cicmonitoring_v2/
+ls
+chmod 775 files/
+ls
+cd files/
+ls
+cd ..
+ls -lah
+chown www_:ww_ files/
+chown www_:www_ files/
+chown www:www files/
+ls
+chmod 777 files/
+ls
+clear
+df -h
+cd /opt/
+ls
+cd /
+cd media/
+ls
+cd ..
+cd image
+cd images
+ls
+cd mnt
+ls
+d ..
+exit
+df -h
+exit
+mysql -u root -p
+mysql -u repo
+mysql -u repo -p
+mysql -u user -p
+mysql -u root -p
+wala din 
+su root
+su
+hisotyr
+history
+nano var/etc/php/7.4/apache2/php.ini
+sudo nano var/etc/php/7.4/apache2/php.ini
+sudo nano /.var/etc/php/7.4/apache2/php.ini
+sudo nano /var/etc/php/7.4/apache2/php.ini
+cd /etc/php/7.4/apache2/
+ls
+sudo nano php.ini
+sudo service apache2 restart 
+ls
+cd ..
+ls
+cd ..
+ls
+php -version
+sudo nano /etc/php/7.4/apache2/php.ini
+clear
+sudo service apache2 restart
+histiry
+history
+exit
+cler
+clear
+ls
+composer
+composer -v
+composer -version
+node
+node -v
+cd /var/
+ls
+clear
+ls
+cd /w
+cd www/
+ls
+cd repo
+ls
+cd prodlib
+ls
+cd prodlib
+cd PRodLib
+ls
+cd ProdLib/
+ls
+clear
+ls
+cd database/
+ls
+cd ..
+ls
+less .env
+cd config/
+ls
+cd ..
+ls
+clear
+ls
+cd app
+ls
+cd Http/
+ls
+cd Controllers/
+ls
+nano ProductController.php 
+ping 192.168.4.55
+nano ProductController.php 
+cd ..
+history
+cd 
+ls
+cd /var/www/repo/ProdLib/
+clear
+php artisan serve --host=192.168.4.57 &
+composer install
+sudo composer install
+composer update
+composer config -g -- disable-tls true
+ps -ef | grep java
+ps -ef | grep php
+kill -9 php
+pkill php
+clear
+ps -ef | grep php
+clear
+php artisan serve --host=192.168.4.57 &
+ps -ef | grep php
+composer install
+composer update
+composer config -g -- disable-tls false
+composer install
+composer update
+php -m
+php7.4 -m
+clear
+ls
+php 
+clear
+php -m
+php -v
+phpenmod openssl
+cd /etc/php/7.4/mods-available
+ls
+sudo cp pdo.ini openssl.ini
+ls
+nano openssl.ini 
+sudo nano openssl.ini 
+cear
+clear
+phpenmod openssl
+sudo bash
+cd /var/www/repo/ProdLib/
+clear
+composer install
+sl
+ls
+phpenmod -v 7.4 openssl
+sudo phpenmod -v 7.4 openssl
+history
+sudo service apache2 restart
+ls
+php7.4 -v
+php -m | grep openssl 
+php -i | grep -i openssl
+'apt-get install openssl
+apt-get install openssl
+sudo apt-get install openssl
+php -i | grep -i openssl
+php -i | grep enabled
+php7.4 -i | grep enabled
+clear
+php7.4 artisan serve --host=192.168.4.57 &
+pkill php
+php7.4 artisan serve --host=192.168.4.57 &
+pkill php
+l
+ls
+clear
+ls
+cd app/
+ls
+cd Providers/
+ls
+cd ..
+nano Product.php 
+l
+ls
+clear
+ls
+cd Http/
+ls
+cd Controllers/
+ls
+nano ProductController.php 
+sudo nano ProductController.php 
+clear
+cd ..
+clear
+php7.4 artisan serve --host=192.168.4.57 &
+clear
+history
+cd cd /usr/lib/oracle/21.1/client64
+ls
+cd cd /usr/lib/oracle/21.1/client64
+cd /usr/lib/oracle/21.1/client64
+ls
+history
+cd ~
+ls
+cd installer/
+ls
+cd php-7.4.2
+cd php-7.4.23
+ls
+cd er
+cd ext
+l
+ls
+cd pdo_oci/
+ls
+cd /usr/lib/php/20190902
+s
+ls
+scp -p pdo_oci.so root@192.168.4.57:/usr/lib/php/20190902/
+scp -p pdo_oci.so root@192.168.4.53:/usr/lib/php/20190902/
+scp -p pdo_oci.so admin2@192.168.4.53:/home/admin2/installer/
+ls
+cd ..
+ls
+cd ~
+ls
+cd installer/
+ls
+ls -lah
+cd /etc/php/7.4/mods-available/
+ls
+nano pdo_oci.ini 
+history
+cd /var/www/
+sl
+cd ..
+ls
+cd repo
+ls
+cd /var/www/
+cd repo
+ls
+cd ProdLib/
+ls
+cd app/
+ls
+cd Http/
+ls
+cd Controllers/
+ls
+less ProductController.php 
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd so
+history
+cd /var/repo/
+ls
+cd /var/
+ls
+cd www/
+ls
+cd repo
+l
+tar cfvz ProdLib57.tar.gz ProdLib/
+npm -v
+node -v
+history
+cd /var/www/
+sl
+ls
+cd repo
+ls
+mv ProdLib ProdLibOld
+tar xfcv ProdLib53.tar.gz 
+tar xzfv ProdLib53.tar.gz 
+ls
+cd ProdLib
+ls
+npm run dev
+clear
+sudo 
+sudo bash
+clear
+ls
+cd /var/
+ls
+mysql
+mysql -u
+mysql -u root
+su
+sudo bash
+mysql -u root -p
+mysql -u root
+php7.4 -m
+php --ini | grep "Loaded"
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+cd ProdLib
+ls
+cd /a
+cd /app
+ls
+cd app
+ls
+cd Http/
+ls
+cd Resources/
+ls
+cd ..
+ls
+cd Controllers/
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd config/
+ls
+cd ..
+ls
+cd public/
+ls
+cd js
+ls
+cd ..
+cd storage/
+sl
+ls
+cd ..
+ls
+cd ..
+ls
+cls
+ls
+cd ProdLib
+ls
+less ProdLib/app/console/Commands/AddItems.php
+clear
+ls
+less ProdLib/app/console/Commands/AddItems.php
+ls
+cd ..
+less ProdLib/app/console/Commands/AddItems.php
+ls
+less ProdLib/app/console/Commands/AddItems.php
+ls
+less ProdLib/app/console/Commands/AddItems.php
+ls
+cd ProdLib
+l
+ls
+cd app/
+ls
+cd Console/
+ls
+cd Commands/
+ls
+less AddItems.php 
+mysql -u prodlib -p
+less AddItems.php 
+mysql -u -p
+mysql -u root -p
+mysql -u prodlib -p
+ls
+less AddItems.php 
+nano AddItems.php 
+clear
+ls
+cd ..
+clear
+php artisan new:items
+php7.4 artisan new:items
+clear
+cd /var/www/ecomm/ProdLib/app/Console/Command
+cd /var/www/ecomm/ProdLib/app/Console/Command/
+cd /var/www/ecomm/ProdLib/app/Console/
+cd /var/www/ecomm/ProdLib/app/Console/Commands/
+cd /var/www/ecomm/
+cd /
+ls
+cd var/
+ls
+cd www/
+ls
+cd html/
+ls
+cd ..
+cd repo
+ls
+cd ProdLib
+ls
+clear
+ls
+cd app/
+ls
+clear
+ls
+cd Console/
+ls
+cd Commands/
+ls
+ifconfig
+clear
+ps
+clear
+ls
+pwd
+clear
+ls
+scp AddItems.php admin2@192.16.4.52
+scp AddItems.php admin2@192.16.4.53:/var/www/ecomm/ProdLib/app/Console/Commands/
+scp AddItems.php admin2@192.18.4.53:/var/www/ecomm/ProdLib/app/Console/Commands/
+scp AddItems.php admin2@192.168.4.53:/var/www/ecomm/ProdLib/app/Console/Commands/
+ls
+nano AddItems.php 
+cd /var/www/
+ls
+cd repo
+exit
+clear
+cd /opt/
+apt-get update -y
+sudo apt-get update -y
+sudo mkdir taiga
+cd taiga/
+ls
+clear
+nano /etc/hosts
+nano nano /etc/hosts
+sudo nano /etc/hosts
+ndoe
+node
+node -v
+clear
+node -v
+posgres
+clear
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+sudo bash
+clear
+ls
+cd /var/www/
+ls
+cd repo/
+ls
+php -version
+clear
+ls
+cd /var/
+ls
+cd www/
+ls
+cd repo
+ls
+cd..
+cd ..
+ls
+cd repo
+la
+tar xfvz live12082021.tar.gz 
+ls
+cd  live
+ls
+cd img
+ls
+cd p
+l
+scd1
+ls
+cd 1
+l
+scd 1
+ls
+cd..
+cd. .
+c..
+cd ..
+ls
+rm -rf live
+ls
+tar xfvz live12082021.tar.gz 
+df -h
+clear
+ls
+rm -rf live
+ls
+df0 h
+df-h
+df -h
+ls
+ls -lah
+clear
+df -0h
+df-
+df-h
+df -h
+clear
+l
+rm devcitia_citihardware120821.sql 
+rm live12082021.tar.gz 
+ls
+df -h
+su
+clear
+pwd
+df -h
+ps -ef | grep java
+ps -ef | grep php
+php -version
+ps -ef | grep apache
+sudo /etc/init.d/apache2 start
+sudo service apache2 start
+sudo /etc/init.d/apache2 start
+ls
+ps -ef | grep java
+cd /var/www/
+ls
+cd html/
+sl
+ls
+cd ..
+cd repo
+ls
+service apache2 status
+service apache2 stop
+ps -ef | grep httpd
+top
+sudo systemctl status apache2.service 
+systemctl restart httpd
+sudo systemctl restart httpd
+apachectl status
+sudo systemctl status apache2
+sudo pkill -9 apache
+sudo systemctl status apache2
+sudo pgrep apach
+sudo pgrep apache
+sudo /etc/init.d/apache stop
+sudo /etc/init.d/apache2 stop
+sudo systemctl status apache2
+ps -ef | grep apache  | awk  {'print $2'}
+kill -9 89
+ps -ef | grep apache  | awk  {'print $2'}
+pkill -9 apache
+ls
+cd ..
+ls
+cd html/
+ls
+cd ..
+ls
+cd repo
+ls
+cd ..
+ls
+ps -ef | grep java
+clear
+ls
+ps -ef | grep apache
+sudo bash
+histiry
+history
+cd /var/log
+ls
+less apache2/
+cd apache2/
+ls
+less error.log
+less other_vhosts_access.log 
+less access.log
+cd /var/log
+ls
+sudo lsof -i:80
+clear
+ps -ef | grep nginix
+sudo systemctl stop nginx 
+sudo systemctl status apache2
+service apache2 restart
+sudo systemctl status apache2
+sl
+cd ..
+ls
+cd www
+ls
+cd repo
+l;s
+sudo systemctl stop nginx
+sudo systemctl disable nginx
+clera
+clear
+ps -ef | grep java
+clear
+sudo systemctl status apache2
+clear
+ls
+pwd
+ps -ef |  grep mysql
+df -h
+cd /var/www/
+ls
+cd repol
+cd repo/
+ls
+ls -lah
+rm ProdLib.tar.gz 
+rm ProdLib53.tar.gz 
+rm ProdLib57.tar.gz 
+ls
+df - h
+df -h
+ls
+cd 
+ls
+ps -ef | grep java
+ls -lah
+rm live12102021.tar.gz
+ls -ah
+ls -lah
+rm ProdLib.zip 
+ls -lah
+rm prodlib_db.sql 
+ls -lah
+ls
+ls  -lah
+rm prestashop.zip 
+rm prestashop_1.zip 
+ls
+clear
+ls
+cd LOCAL_SVN/
+ls
+cd ..
+cd installer/
+ls
+cd ..
+ls
+ls -lah
+cd  /opt/
+ls
+ls -lah
+ls
+ls -lah
+cd /var/
+ls
+cd /ww
+cd /var/www/
+ls;
+cd html/
+ls
+cd ..
+ls
+cd repo/
+df -h
+ps -ef | grep mysql
+history
+history > history.txt
+less  history.txt 
+sudo /etc/init.d/mysql restart
+ps -ef  | grep mysql
+df -h
+cd /var/
+cd /dev/
+ls
+cd /var/
+ls
+clear
+cd /var/www/
+ls
+cd repo
+ls
+sclear
+clear
+exit
+df -h
+ps -ef | grep mysql
+clear
+cd /var/www/
+sl
+ls
+cd repo
+ls
+cd ..
+ls
+cd html
+l
+cd ..
+cear
+clear
+cd 
+ls
+cd LOCAL_SVN/
+LS
+ls
+cd oracle
+l
+cd oracle
+ls
+cd ..
+ls
+cd oracle
+ls
+cd ..
+cd installer
+ls
+cd ..
+clear
+ls
+cd /opt/
+ls
+cd /var/
+ls
+cd www/
+ls
+cd repo
+ls
+cd 
+ls
+cd /opt/
+ls
+cd 
+ls
+ps -ef | grep postres
+ps -ef | grep pos
+cd va/
+cd /var/
+cd /opt/
+ls
+cd /av
+cd /var/www/
+ls
+cd repo/
+l
+cd cicmonitoring_v2
+ls
+cd database/
+ls
+cd ..
+ls
+nano app.ini 
+cd ..
+ls
+mysql
+clear
+history
+ps -ef | grep mysql
+sudo /etc/init.d/mysql restart
+ps -ef | grep mysql

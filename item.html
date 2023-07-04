@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>CIC Monitoring</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+  <link  rel="stylesheet" type="text/css" href="css/select2.css">
+  <link  rel="stylesheet" type="text/css" href="css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/j1.css">
+  <link rel="stylesheet" type="text/css" href="css/j2.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="css/dataTables.css">
+  <script type="text/javascript" src="javascript/3.4.1_jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/3.3.7_js_bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.checkboxes.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.select.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jszip.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/pdfmake.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/vfs_fonts.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.print.min.js"></script>
+  <script src="javascript/app.js"></script>
+  <script src="javascript/sweetalert.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/page.css">
+</head>
+
+<body>
+  <div class='row-template'>
+    <div id="appnavbar" class = 'top-template'></div>
+    <div id="sidebar" class = 'sidebar-template'></div>
+    <!-- Page Content  -->
+    <div id="content" class = 'content-template'>
+      
+      <ul class="nav nav-tabs">
+        <li class="active"><a id='lnkitemset' data-toggle="tab" href="#set">Add</a></li>
+        <li><a id='lnkitemcancel' data-toggle="tab" href="#cancel">Remove </a></li>
+      </ul>
+      
+      <div class="tab-content" >
+        
+        <div id="set" class="tab-pane fade in active">
+          <button id = 'btnadditem' class = 'btn btn-primary' style = 'margin:5px; width: 120px;'>Add Legacy</button>
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><b>Search EBS Items</b></div>
+            
+            <div class="panel-body">
+              <div class="grid-container">
+                <div class="grid-item"><label>Barcode</label></div>
+                <div class="grid-item"><input type='text' id='fltbarcode'></div>
+                <div class="grid-item"><label>Description</label></div>  
+                <div class="grid-item"><input type='text' id='fltdescription'></div>
+                <div class="grid-item"><label>Division </label></div>
+                <div class="grid-item"> <select id='cmbdivision'></select></div>
+                
+                <div class="grid-item"><label> Brand </label></div>  
+                <div class="grid-item"><select id='cmbbrand' ></select> </div>  
+                <div class="grid-item"><label>Branch </label></div>  
+                <div class="grid-item"> <select id='cmbbranch' ></select></div>  
+                <div class="grid-item" style = 'display: none;'><label>Group </label>:</div>  
+                <div class="grid-item" style = 'display: none;'> <select id='cmbgroup' ></select> </div> 
+              </div>
+              
+              <br>
+              <div style = 'float:right;'>
+                <button id = 'btnsearchitem' class = 'btn btn-primary'>Search</button>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Item</a></li>
+            <li><a id = 'lnkaddeditems' data-toggle="tab" href="#addeditem">Added Items</a></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              
+              <div id="tablecontainer" style = 'padding-right: 10px;  width: 93vw;'>
+                <table id="tbitem" class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Barcode</th>
+                      <th>Legacy Barcode</th>
+                      <th>Description</th>
+                      <th>Brand</th>
+                      <th>Division</th>
+                      <th>itemtypeid</th>
+                      <th>Item Type</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id='b1'>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="addeditem" class="tab-pane fade">
+              <div class ='table-container' style = 'height:50vh;'>
+                <table id='tbaddeditem' class='table table-bordered'>
+                  <thead>
+                    <th style = 'display: none;'>
+                      ProductId
+                    </th>
+                    <th>
+                      Barcode
+                    </th>
+                    <th>
+                      Legacy Barcode
+                    </th>
+                    <th>
+                      Description
+                    </th> 
+                    <th>
+                      Brand
+                    </th>  
+                    <th>
+                      Division
+                    </th>
+                    <th>
+                      Branch
+                    </th>
+                    <th>
+                      Group
+                    </th>
+                    <th>
+                      Schedule Date
+                    </th>
+                    <th>
+                      Added Date
+                    </th>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cancel" class="tab-pane fade">
+          <div class="panel panel-default">
+            <div class="panel-heading"><b>Search</b></div>
+            <div class="panel-body">
+              
+              <div class="grid-container">
+                <div class="grid-item"><label>Barcode</label></div>
+                <div class="grid-item"><input type='text' id='fltbarcode2'></div>
+                <div class="grid-item"><label>Legacy Barcode</label></div>
+                <div class="grid-item"><input type='text' id='fltlegacybarcode2'></div>
+                <div class="grid-item"><label>Description</label></div>  
+                <div class="grid-item"><input type='text' id='fltdescription2'></div>
+                <div class="grid-item"><label>Division </label></div>
+                <div class="grid-item"><select id='cmbdivision2'></select></div>
+                <div class="grid-item"><label> Brand </label></div>  
+                <div class="grid-item"><select id='cmbbrand2'></select> </div>  
+                <div class="grid-item"><label>Branch* </label></div>  
+                <div class="grid-item"><select id='cmbbranch2'></select></div>  
+                <div class="grid-item"><label>Group* </label></div>  
+                <div class="grid-item"><select id='cmbgroup2'></select> </div>  
+                <div class="grid-item"><label>Schedule from* </label></div>  
+                <div class="grid-item"><input type="date" onkeydown="return false" id='dtfrom'></div>  
+                <div class="grid-item"><label>Schedule To* </label></div>  
+                <div class="grid-item"><input type="date" onkeydown="return false" id='dtto'></div>  
+              </div>
+              
+              <div style = 'float:right'>
+                <button type="button" class="btn btn-primary" id="btnsearch">Search</button>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="nav nav-tabs">
+            <li class="active" ><a id = 'lnkitems'data-toggle="tab" href="#menu1">Item</a></li>
+            <li ><a id = 'lnkremovedlist' data-toggle="tab" href="#menu2">Removed List</a></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="menu1" class="tab-pane fade in active">
+              <div style = 'float:left; padding:5px; '>
+                <button id='btncancel' class = 'btn btn-danger'>Remove</button>
+              </div>
+              
+              <div class="table-container" style = 'padding-right: 10px;  height:45vh; width: 91vw;'>
+                <table id='tbitemcancel' class='table table-bordered'>
+                  <thead>
+                    <th style = 'display: none;'>
+                      ProductId
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                      Barcode
+                    </th>
+                    <th>
+                      Legacy Barcode
+                    </th>
+                    <th>
+                      Description
+                    </th>
+                    <th>
+                      Brand
+                    </th>  
+                    <th>
+                      Division
+                    </th>
+                    <th>
+                      Branch
+                    </th>
+                    <th>
+                      Group
+                    </th>
+                    <th>
+                      Schedule Date
+                    </th>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <div class="table-container" style = 'height: 50vh;'>
+                <table id='tbitemremoved' class='table table-bordered'>
+                  <thead>
+                    <th style = 'display: none;'>
+                      ProductId
+                    </th>
+                    <th>
+                      Barcode
+                    </th>
+                    <th>
+                      Legacy Barcode
+                    </th>
+                    <th>
+                      Description
+                    </th>
+                    <th>
+                      Brand
+                    </th>  
+                    <th>
+                      Division
+                    </th>
+                    <th>
+                      Branch
+                    </th>
+                    <th>
+                      Group
+                    </th>
+                    <th>
+                      Schedule Date
+                    </th>
+                    <th>
+                      Removed Date
+                    </th>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Product</h4>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td height='60px' width='100px'><label>Bardcode</label></td>
+              <td height='60px' width='200px'><label id='lbbarcode'>1090100024807</label> </td>
+              <td height='60px' width='50px'></td>
+              <td height='60px' width='200px'>
+             
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Description</label>
+                </td>
+                <td colspan = '3'>
+                  <label id='lbdescription'>WROUGHT IRON HAUSMANN/BROTHER TWISTED 154094/61188 8X8
+                    BLK</label>
+                  </td>
+                </td>
+              </tr>
+              <!-- <div class="grid-item"><label>Branch </label> :</div>   -->
+              <tr>
+                <td>
+                  <label>Branch </label>
+                </td>
+                <td>
+                  <select id='cmbbranch3'></select>
+                </td>
+                <td width='50px'>
+                  <label>Date </label>
+                </td>
+                <td>
+                  <input type="date" onkeydown="return false" id="txtdate">
+                  <input type="hidden" id="txtbatch">
+                  <input type="hidden" id="txtproductid">
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Group </label>
+                </td>
+                <td>
+                  <select id='cmbgroup3'></select>
+                </td>
+                <td><label> Item Type </label></td>
+                <td>
+                  <input type = 'hidden' id = 'txtitemtypeid'>
+                  <label id='lbitemtype'>
+                  </label>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id='btncreateschedule'>Add</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="addItemLegacy" class="modal fade" role="dialog"> 
+      <div class="modal-dialog ">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Add Product</h4>
+          </div>
+          <div class="modal-body">
+            <table>
+              <tr>
+                <td height='60px' width='100px'><label>Legacy Barcode</label></td>
+                <td height='60px' width='200px'><label id='lbbarcode'><input type = 'text' id = 'txtbarcode'></label> </td>
+                <td height='60px' width='50px'><label>Description</label></td>
+                <td height='60px' width='200px'>
+                  &nbsp <input type = 'text' id = 'txtdescription'>
+                </tr>
+                <!-- <div class="grid-item"><label>Branch </label> :</div>   -->
+                <tr>
+                  <td>
+                    <label>Branch </label>
+                  </td>
+                  <td>
+                    <select id='cmbbranch4'></select>
+                  </td>
+                  <td width='50px'>
+                    <label>Date </label>
+                  </td>
+                  <td>
+                    &nbsp&nbsp<input type="date" onkeydown="return false" id="txtdate2">
+                    <input type="hidden" id="txtbatch">
+                    <input type="hidden" id="txtproductid">
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Group </label>
+                  </td>
+                  <td>
+                    <select id='cmbgroup4'></select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id='btnadditemlegacy'>Add</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="cancelModal" class="modal fade" role="dialog">
+        <div class="modal-dialog ">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Remove an Item</h4>
+            </div>
+            <div class="modal-body">
+              <table>
+                <tr>
+                  <td height='60px' width='100px'><label>Reason</label>
+                  </td>
+                  <td>
+                    <textarea class="form-control" rows="3" id = 'txtreason'  cols="90"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class = 'modal-footer'>
+              <button id='btnYes' class = 'btn btn-primary'>Yes</button>
+              <button id='btnNo' class = 'btn btn-light'>No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  </html>
+  <div id="modalcontainer1"></div>
+  <div id="modalcontainer2"></div>
+  <div id="modalcontainer3"></div>
+
+  <div id="loader"></div>
+  <script src="javascript/select2.js"></script>
+  <script src="javascript/select2.min.js"></script>
+
+  <style>
+  
+    tr{
+      height: 50px;
+    }
+    
+    .panel-body > input{
+      width: 120px;
+    }
+
+    select{
+      width:139px;
+    }
+
+  </style>

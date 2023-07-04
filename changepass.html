@@ -1,0 +1,36 @@
+<div id="ChangePassModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User Details</h4> 
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label >Fullname</label>
+            <input class="form-control" id="txtfullname" disabled>
+            <input type='hidden' id="txtempid" value='0'>
+            <input type='hidden' id="txtuserdivisionid" value='0' >
+          </div>
+          <!-- <div class="form-group">
+            <label >Username</label>
+            <input type="text" class="form-control" id="txtusername" disabled>
+          </div> -->
+          <div class="form-group">
+            <label >Old Password</label>
+            <input type="password" class="form-control" id="txtoldpassword">
+          </div>
+          <div class="form-group">
+            <label >New Password</label>
+            <input type="password" class="form-control" id="txtnewpassword">
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-ModalName="group" id='btnchangepass'>Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

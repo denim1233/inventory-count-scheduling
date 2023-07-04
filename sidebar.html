@@ -1,0 +1,48 @@
+<div class="wrapper d-flex align-items-stretch" >
+    <div  id="sidebar-wrapper">
+      <div class="list-group list-group-flush">
+      <a href="index.html" id = 'lnkindex' class="list-group-item list-group-item-action bg-light">Home</a>
+      <a href="inventory.html" id = 'lnkinventory' class="list-group-item list-group-item-action bg-light" data-child = 'chldinventory'>
+          Inventory
+      </a>
+      <div style = 'display:none;' id = 'chldinventory'>
+      </div>
+      <a href="group.html" id = 'lnkgroup' class="list-group-item list-group-item-action bg-light">
+          Group
+      </a>
+      <a href="item.html" id = 'lnkitem' class="list-group-item list-group-item-action bg-light" data-child = 'chldprofile'>
+          Item
+      </a>
+      <a href="#" id = "lnksysholiday"  class="list-group-item list-group-item-action bg-light">
+        Date Settings
+      </a>
+      <div style = 'display:none;' id = 'chldsettings'>
+        <ul style="list-style-type:none; padding-inline-start: 0px;">
+            <li><a href="#" id = "lnksysholiday"  class="list-group-item list-group-item-action bg-light">Date Settings</a></li>
+            <li><a href="#" id = "lnksysgroup" style = 'display:none;' class = 'childlink'>Group </a></li>
+        </ul>
+      </div>
+      <a href="user.html" id = 'lnkuser' class="list-group-item list-group-item-action bg-light" >
+        User
+      </a>
+     <!--   <a href="database.html" id = 'lnkdatabase' class="list-group-item list-group-item-action bg-light" >
+        Database
+      </a> -->
+    <a href="#" id = 'lnkreport' class="list-group-item list-group-item-action bg-light">
+    	Reports
+		<div class = 'listdown-container'>
+		  <i class="fa fa-angle-double-down"></i>
+		</div>
+    </a>
+   <div style = 'display:none;' id = 'chldreport'>
+    <ul style="list-style-type:none; padding-inline-start: 0px;" >
+        <li>
+          <a href="productschedule.html" id = "lnkproductschedule"  class="list-group-item list-group-item-action bg-light">Product Schedule</a>
+        </li>
+        <li>
+          <a href="scheduledgroup.html" id = "lnkscheduledgroup"  class="list-group-item list-group-item-action bg-light">Scheduled Group</a>
+        </li>
+    </ul>
+   </div>
+      </div>
+</div>

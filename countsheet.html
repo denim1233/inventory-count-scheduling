@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>CIC Monitoring</title>
+  <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+  <link  rel="stylesheet" type="text/css" href="css/select2.css">
+  <link  rel="stylesheet" type="text/css" href="css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/j1.css">
+  <link rel="stylesheet" type="text/css" href="css/j2.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/page.css">
+  <script type="text/javascript" src="javascript/3.4.1_jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/3.3.7_js_bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.checkboxes.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/dataTables.select.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.flash.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/jszip.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/pdfmake.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/vfs_fonts.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="javascript/datatable/buttons.print.min.js"></script>
+  <script type="text/javascript" src="javascript/sweetalert.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="javascript/app.js"></script>
+</head>
+
+<body>
+  <div id="appnavbar"></div>
+  <div class='row'>
+    <div id="sidebar"></div>
+    <!-- Page Content  -->
+    <div id="content">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Count Sheet</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <br>
+
+          
+
+          <div>
+            <div class="panel panel-default">
+              <div class="panel-heading"><b>Filter</b></div>
+              <div class="panel-body">
+
+                <div class="form-inline">
+                  <div class="form-group">
+                        <label>Date</label> :
+                        <input type="date" id='dtfrom' class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Division</label> :
+                    <select style='width: 200px;' id='cmbbranch' style='width: 50px; text-align: right;'></select>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" id="btnsearch_cc">Search</button>
+                </div>
+              </div>
+            </div>
+            <div style='float:right; padding: 10px; padding-right: 20px;'> 
+                 <button id = 'btnprint' type="button"class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-export"></span> Print
+                </button>
+                <button id = 'btnexport' type="button"class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-export"></span> Export
+                </button>
+                
+              </div>
+          </div>
+        </div>
+
+        <div id="tablecontainer" style='width:auto;'>
+             <table id="tbproductschedule" class="table table-bordered">
+            <thead>
+              <tr>
+                <th style = 'display:none; '>ScheduleId</th>
+                <th>Barcode</th>
+                <th>Legacy Barcode</th>
+                <th>Description</th>
+                <th>Selling Area</th>
+                <th>Warehouse Area</th>
+              </tr>
+            </thead>
+            <tbody id='b1'>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="menu1" class="tab-pane fade">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<div id="modalcontainer1"></div>
+<div id="modalcontainer2"></div>
+<div id="loader"></div>
+
+<style>
+  td {
+    padding-left: 5px;
+    padding-right: 3px;
+  }
+
+  .modal-dialog {
+    width: 50 !important;
+  }
+</style>
+
+<style>
+  td.details-control {
+    background: url('https://cdn.rawgit.com/DataTables/DataTables/6c7ada53ebc228ea9bc28b1b216e793b1825d188/examples/resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+  }
+
+  tr.shown td.details-control {
+    background: url('https://cdn.rawgit.com/DataTables/DataTables/6c7ada53ebc228ea9bc28b1b216e793b1825d188/examples/resources/details_close.png') no-repeat center center;
+  }
+
+  tr {
+    height: 50px;
+  }
+
+  button {
+    width: 80px;
+  }
+</style>
+
+<script src="javascript/select2.js"></script>
+<script src="javascript/select2.min.js"></script>
