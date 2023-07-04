@@ -184,7 +184,6 @@ class CicModel{
 
     ";
 
-    //get the active batch only when adding new item
     public static $SQL_BRANCH_GROUP_GET = "
     SELECT INB.groupid,SG.groupname from inv_batch INB
     inner join sys_group SG ON SG.groupid = INB.groupid 
@@ -200,31 +199,6 @@ class CicModel{
     and INP.groups = :GROUPID AND INP.barcode = :BARCODE
     ";
 
-    // there is a bug in this query
-    // it shows duplicate record
-
-    // the union query purpose was to search for
-    // phased out item that cant be filter due to null
-    // dw data divisionid null brandid null
-    
-    // select scheduleid,INPD.brandname,INPD.divisionname,storename,groupname,scheduledate,
-    // CASE WHEN INPD.barcode IS NULL THEN INP.barcode ELSE INPD.barcode END AS barcode,
-    // CASE WHEN INPD.legacybarcode IS NULL THEN INP.legacybarcode ELSE INPD.legacybarcode END AS legacybarcode,
-    // CASE WHEN INPD.description IS NULL THEN INP.description ELSE INPD.description END AS description
-    //  FROM inv_schedule INS
-    // INNER JOIN inv_product INP on INP.productid = INS.productid
-    // INNER JOIN inv_product_dw INPD on INPD.barcode = INP.barcode
-    // INNER JOIN inv_batch INB on INB.batchid = INP.batchid
-    // INNER JOIN sys_group SG on SG.groupid = INB.groupid
-    // WHERE `scheduledate` BETWEEN '2020-11-30' AND '2020-11-30'
-    //     AND INS.statusid = 1
-    //         AND INB.storeid = IFNULL(134,INB.storeid)
-    // AND INB.groupid = IFNULL(121,INB.groupid)
-    //     AND INPD.divisionid = IFNULL(null,INPD.divisionid) OR INPD.divisionid IS NULL
-    // AND INPD.brandid = IFNULL(null,INPD.brandid) OR INPD.brandid IS NULL
-    //     AND INP.barcode like '%:BARCODE%'
-    // AND INP.legacybarcode like '%LEGACYBARCODE%'
-    // AND INP.description like '%:DESCRIPTION%'
 
     public static $SQL_ITEM_SEARCH = "
     select scheduleid,INPD.brandname,INPD.divisionname,storename,groupname,scheduledate,
@@ -272,7 +246,6 @@ class CicModel{
     AND INP.description like CONCAT('%', :DESCRIPTION, '%')
     ;
     ";
-
   
     public static $SQL_ITEM_CHILD = "
     select *,
@@ -289,13 +262,6 @@ class CicModel{
     order by INS.scheduleid desc
     ;
     ";
-
-    // AND INB.storeid = IFNULL(:STOREID,INB.storeid)
-    // AND INB.groupid = IFNULL(:GROUPID,INB.groupid)
-    // AND INPD.divisionid = IFNULL(:DIVISIONID,INPD.divisionid)
-    // AND INPD.supplierid = IFNULL(:SUPPLIERID,INPD.supplierid)
-    // AND INPD.barcode like  CONCAT('%', :BARCODE, '%')
-    // AND INPD.description like CONCAT('%', :DESCRIPTION, '%')
 
     public static $ORA_LOAD_SUPPLIER = "SELECT DISTINCT VENDORCODE,VENDOR_NAME FROM XXCH_ALLSITE_PRODUCT_V WHERE ORGANIZATION_ID = :ORG_ID";
     public static $ORA_LOAD_CATEGORY = "SELECT DISTINCT CATEGORYID,CATEGORYNAME FROM XXCH_ALLSITE_PRODUCT_V WHERE ORGANIZATION_ID = :ORG_ID";
@@ -350,32 +316,6 @@ class CicModel{
     ORDER BY groupname,INPD.divisionname,description asc
     ;
     ";
-
-    // select *,
-    // CASE WHEN INPD.barcode IS NULL THEN INP.barcode ELSE INPD.barcode END AS barcode,
-    // CASE WHEN INPD.legacybarcode IS NULL THEN INP.legacybarcode ELSE INPD.legacybarcode END AS legacybarcode,
-    // CASE WHEN INPD.description IS NULL THEN INP.description ELSE INPD.description END AS description
-    //  FROM inv_schedule INS
-    // INNER JOIN inv_product INP on INP.productid = INS.productid
-    // LEFT JOIN inv_product_dw INPD on INPD.barcode = INP.barcode
-    // INNER JOIN inv_batch INB on INB.batchid = INP.batchid
-    // INNER JOIN sys_group SG on SG.groupid = INB.groupid
-    // WHERE `scheduledate` BETWEEN :DATEFROM AND :DATETO
-    // AND INS.statusid = 1
-    // AND INB.storeid = IFNULL(:STOREID,INB.storeid)
-    // AND INB.groupid = IFNULL(:GROUPID,INB.groupid)
-    // AND INPD.divisionid = IFNULL(:DIVISIONID,INPD.divisionid)
-    // AND INPD.brandid = IFNULL(:BRANDID,INPD.brandid)
-    // AND INPD.barcode like  CONCAT('%', :BARCODE, '%')
-    // AND INP.legacybarcode like  CONCAT('%', :LEGACYBARCODE, '%')
-    // AND INPD.description like CONCAT('%', :DESCRIPTION, '%')
-
-    // SCHEDULEID,ONHAND_QTY,SELLING_QTY,RECEIVING_QTY,ADJUSTMENT_QTY,RESERVATION_QTY,ADJ_ISSUE,ADJ_RECEIPT,RCV_IR,RCV_ER
-    // FROM DWT_EX_PRODUCT_CIC_V2 
-
-    // SELECT 
-    // SCHEDULEID,ONHAND_QTY,RESERVATION_QTY,ADJUSTMENT_QTY,SELLING_QTY,RECEIVING_QTY 
-    // FROM DWT_EX_PRODUCT_CIC 
 
     public static $ORA_INVENTORY_GET = "
     SELECT 
@@ -473,8 +413,6 @@ class CicModel{
     
    ORDER BY groupname,INPD.divisionname,description ASC
     ";
-
-//    ORDER BY cic,groupname,divisionname,description ASC
 
 
     public static $SQL_DASHBOARD_CURRENTCOUNT_STORE = "
@@ -739,13 +677,6 @@ class CicModel{
     ////////////////////////////////////////////////////////////////////////////////////////
 
      public function LOAD_ORA_DATA($sql,$parameter,$instance){
-        // echo $sql;
-        // echo "<br>";
-        // print_r($parameter);
-        // echo "<br>";
-        // echo $instance;
-        // return;
-
      	$options = [
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -756,16 +687,16 @@ class CicModel{
 
      	 switch($instance){
         	case 'dw':
-				$myServer = '192.168.4.215';
-				$myDB = 'DW';
-				$oci_uname = 'dw';
-				$oci_pass = 'dw';
+				$myServer = 'xxxx';
+				$myDB = 'xx';
+				$oci_uname = 'xx';
+				$oci_pass = 'xx';
         	break;
-        	case 'prodm':
-				$myServer = '192.168.4.55';
-				$myDB = 'PROD';
-				$oci_uname = 'appsro';
-				$oci_pass = 'appsro';
+        	case 'xx':
+				$myServer = 'xx';
+				$myDB = 'xx';
+				$oci_uname = 'xx';
+				$oci_pass = 'xx';
         	break;
         }
 
@@ -840,13 +771,6 @@ class CicModel{
      }
 
      public function EXPORT_EXCEL(){
-
-//         $file="demo.xls";
-// $test="<table  ><tr><td>Cell 1</td><td>Cell 2</td></tr></table>";
-// header("Content-type: application/vnd.ms-excel");
-// header("Content-Disposition: attachment; filename=$file");
-// echo $test;
-
 
         $data = $_POST['ledgerContent'];
         $filename="cic_ledger.xls";
